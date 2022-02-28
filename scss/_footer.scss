@@ -1,0 +1,108 @@
+.footer{
+  background: linear-gradient(180deg, $grayscale-base, $black);
+  padding: 2rem;
+  & .container{
+    display: grid;
+    grid-template-areas: "Logo"
+                          "Networks" 
+                          "Content" 
+                          "Copy";
+  }
+  @include e(content){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq-max(md) {
+      justify-content: center;
+      grid-area: Content;
+    }
+  }
+  @include e(terms){
+    margin: 3rem 0 1.5rem 0;
+    li{
+      color: $tertiary;
+      font-size: .75rem;
+    };
+    @include mq-max(md) {
+      text-align: center;
+      order: 2;
+    }
+  }
+  @include e(img){
+    img{
+      width: 170px;
+    }
+    @include mq-max(md) {
+      grid-area: Logo;
+      text-align: center;
+    }
+  }
+  @include e(block) {
+    color: $white;
+    margin: 0 1.5rem 1.5rem 0;
+    h3{
+      font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+    ul {
+      li{
+        font-size: .75rem;
+        font-weight: 300;
+        span{
+          font-weight: 600;
+        }
+      }
+    }
+    & .flex{
+      align-items: baseline;
+     .border {
+        border-left: 1px solid $white;
+        padding-left: 1rem;
+        margin-left: 1rem;
+      }
+    }
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+  @include e(networks){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    @include e(icons){
+      img{
+        width: 200px;
+      }
+    }
+
+    .select__icon{
+      right: 94px;
+    }
+    .select__arrow{
+      top: 26px;
+    }
+    @include mq-max(md) {
+      justify-content: center;
+      grid-area: Networks;
+      margin: 1.5rem 0 2rem 0;
+      flex-direction: column;
+      & .select{
+        order: 2;
+        margin-top: 1.25rem;
+      }
+    }
+  }
+  @include e(copyright){
+    p{
+      text-align: center;
+      font-size: .75rem;
+      color: $white;
+      margin-top: 1.5rem;
+    }
+    @include mq-max(md) {
+      grid-area: Copy;
+    }
+  }
+}

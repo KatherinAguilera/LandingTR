@@ -1,0 +1,100 @@
+.cards{
+  box-shadow: 10px 10px 60px #00000029;
+  background-color: $white;
+  @include m(radius){
+    border-radius: 1.25rem;
+  }
+  @include m(shadow){
+    box-shadow: none;
+  }
+  @include m(gray){
+    background-color: $gray-1;
+    padding: 1rem;
+  }
+  @include e (icons){
+    padding: 2rem 1.25rem;
+    position: relative;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    margin-bottom: 1.25rem;
+    p{
+      text-align: center;
+      font-size: 1rem;
+      color: $black;
+      margin-top: 1.5rem;
+      span{
+        font-weight: 600;
+      }
+    }
+    figure{
+      position: absolute;
+      top: -40px;
+      left: 90px;
+    }
+    img{
+      width: 5rem;
+      height: 5rem;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 60px solid $white;
+      border-right: 50px solid transparent;
+      border-left: 50px solid transparent;
+      right: -30px;
+    }
+  }
+  @include e(img){
+    padding: 2rem 1.25rem;
+    position: relative;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    margin-bottom: 1.25rem;
+    background-color: #E3FBD8;
+    p{
+      font-size: 1rem;
+      color: $black;
+      margin-top: 1.5rem;
+      span{
+        font-weight: 600;
+      }
+    }
+    figure{
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      z-index: 2;
+    }
+    img{
+      width: 5rem;
+      height: 5rem;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 60px solid #E3FBD8;
+      border-right: 50px solid transparent;
+      border-left: 50px solid transparent;
+      left: -30px;
+    }
+  }
+  @include e (grid){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 3rem;
+    justify-content: center;
+    grid-auto-flow: dense;
+  
+  }
+}
+

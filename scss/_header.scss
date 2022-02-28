@@ -1,0 +1,104 @@
+.header{
+  @include e(nav){
+    background: linear-gradient(180deg, $grayscale-base, $black);
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    padding: 1rem 0;
+    align-items: center;
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include mq-max(md) {
+        figure img{
+          width: 70%;
+        }
+      }
+    }
+  }
+  @include e(language){
+    background-color: $secondary-light;
+    width: 100%;
+  }
+  @include e(menu){
+    margin: 0 3.5rem 0 2rem;
+    @include mq-max(lg) {
+      display: block;
+      color: $black;
+      margin: 0;
+    }
+    color: $white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    li{
+      @include mq-max(lg) {
+        margin-right: 0;
+        font-size: 1rem;
+        padding: .5rem 0;
+        font-weight: 600;
+        margin-right: 0;
+      }
+      font-size: 1.25rem;
+      margin-right: 4rem;
+      position: relative;
+      cursor: pointer;
+
+      span{
+        content: "";
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 8px solid $white;
+          border-radius: 6px;
+          position: absolute;
+          top: 14px;
+          right: -1.5rem
+      }
+
+    }
+  }
+  @include e(buttons){
+    @extend .flex;
+    justify-content:flex-end;
+    margin-left: 2rem;
+    @include mq-max(lg) {
+      display: block;
+      margin-left: 0;
+    }
+  }
+  @include e(mobile){
+    display: none;
+    @include mq-max(lg) {
+      display: block;
+      cursor: pointer;
+   }
+  }
+
+}
+
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  @include mq-max(lg) {
+
+    &.active1{
+      opacity: 1;
+      visibility: visible;
+      display: block;
+      position: absolute;
+      top: 5.5rem;
+      background: white;
+      width: 90%;
+      border-radius: .5rem;
+      text-align: center;
+      box-shadow: 0px 0px 60px #00000029;
+    }
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
